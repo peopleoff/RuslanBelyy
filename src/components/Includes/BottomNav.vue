@@ -12,13 +12,13 @@
         <div class="icons">
             <div class="stuff">
                 <a href="https://github.com/Peopleoff">
-                    <embed class="websites" src='/static/images/github.svg' />
+                    <img class="websites" alt="Github Icon" src='/static/images/Github-Mark-Light.png' />
                 </a>
                 <a href="https://www.linkedin.com/in/ruslan-belyy-56052a134">
-                    <embed class="websites" src='/static/images/linkedin.svg' />
+                    <img class="websites" alt="Linkedin Icon" src='/static/images/Linked-White.png' />
                 </a>
                 <a href="https://codepen.io/peopleoff">
-                    <embed class="websites" src='/static/images/codepen.svg' />
+                    <img class="websites" alt="Codepen Icon" src='/static/images/codepen-white.png' />
                 </a>
             </div>
         </div>
