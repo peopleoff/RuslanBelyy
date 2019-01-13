@@ -1,16 +1,16 @@
 <template>
   <div class="main">
-    <div class="alert alert-success alert-dismissible fade in hidden" id="alert">
+    <div :class="'alert alert-' + alert.type" v-if="alert.show">
       <a href="#" class="close" data-dismiss="alert" aria-label="close" v-on:click="close">&times;</a>
-      <strong>Thank You!</strong> I will reach out to you within 24 hours and look forward to working together.
+      {{alert.message}}
     </div>
     <section class="intro">
       <h1 class="head-line">Web Developer</h1>
       <h3 class="sub-header">Building Brands that tell a Story</h3>
-      <img class="avatar" src='/static/images/avatars.svg' />
+      <img class="avatar" src='images/avatars.svg' />
       <div class="intro-footer">
         <div class="intro-hero">
-          <img class="hero img-responsive" src="/static/images/hero.png" alt="">
+          <img class="hero img-responsive" src="images/hero.png" alt="">
         </div>
       </div>
     </section>
@@ -31,11 +31,11 @@
             <div class="col-sm">
               <h3>Favorite Languages</h3>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">JavaScript</li>
+                <li class="list-group-item">HTML / CSS / JavaScript</li>
                 <li class="list-group-item">Vue.js</li>
                 <li class="list-group-item">Node.js</li>
                 <li class="list-group-item">C#</li>
-                <li class="list-group-item">Classic ASP</li>
+                <li class="list-group-item">VBScript / ASP</li>
               </ul>
             </div>
             <div class="col-sm">
@@ -45,7 +45,7 @@
                 <li class="list-group-item">CodePen</li>
                 <li class="list-group-item">SQL</li>
                 <li class="list-group-item">MongoDB</li>
-                <li class="list-group-item">Sass</li>
+                <li class="list-group-item">SASS</li>
               </ul>
             </div>
           </div>
@@ -57,84 +57,27 @@
     </header>
 
     <section id="cd-timeline" class="cd-container">
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-picture">
-          <img src="https://peopleoff.github.io/TypeTest/static/favicon.png" alt="TypeTest Icon">
+
+      <div class="cd-timeline-block" v-for="items in projects" v-bind:key="items.fields.name">
+        <div class="cd-timeline-img cd-picture" :style="'background-color: ' + items.fields.color">
+          <img :src="items.fields.image" :alt="items.fields.name + ' Image'">
         </div>
         <!-- cd-timeline-img -->
 
         <div class="cd-timeline-content">
-          <h2>TypeTest</h2>
-          <p>TypeTest was a project built using Vue.JS to help with typing speed and accuracy. Built with varying
-            difficulty levels, the user can choose their word-length and keep high scores to improve over time.</p>
+          <h2>{{items.fields.name}}</h2>
+          <p v-html="items.fields.description"></p>
           <div class="cd-built-with">
             <p>Built Using</p>
-            <p>Vue.JS, Javascript, Materialize, CSS3, HTML5, Github Pages</p>
+            <p v-if="items.fields.frontEnd">Front-End: <span v-for="(tech,index) in items.fields.frontEnd" v-bind:key="index">{{tech}},
+              </span></p>
+            <p v-if="items.fields.backEnd">Back-End: <span v-for="(tech,index) in items.fields.backEnd" v-bind:key="index">{{tech}},
+              </span></p>
           </div>
-          <a href="https://peopleoff.github.io/TypeTest/" class="cd-read-more">Visit Website</a>
+          <a :href="items.fields.projectLink" class="cd-read-more">View Project</a>
         </div>
         <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-block -->
-
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie">
-          <img src="https://cdn.freebiesupply.com/logos/large/2x/reddit-2-logo-png-transparent.png" alt="Reddit Icon">
-        </div>
-        <!-- cd-timeline-img -->
-
-        <div class="cd-timeline-content">
-          <h2>Readit</h2>
-          <p>A simple Discord bot that allows you to share random posts from the internet with your internet friends
-            through an easy to use Discord bot.</p>
-          <div class="cd-built-with">
-            <p>Built Using</p>
-            <p>Node.js, Reddit API, Discord.js</p>
-          </div>
-          <a href="https://github.com/Peopleoff/readit" class="cd-read-more">Visit Github</a>
-        </div>
-        <!-- cd-timeline-content -->
-      </div>
-      <!-- cd-timeline-block -->
-
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-picture">
-          <img src="https://hairbyirina.com/Media/favicon.ico" alt="Scissors Icon">
-        </div>
-        <!-- cd-timeline-img -->
-
-        <div class="cd-timeline-content">
-          <h2>HairByIrina</h2>
-          <p>Local Hairstylist website made for her clients to easily find her and improve overall number of
-            appointments.</p>
-          <div class="cd-built-with">
-            <p>Built Using</p>
-            <p>PHP, HTML5, CSS3</p>
-          </div>
-          <a href="https://hairbyirina.com/" class="cd-read-more">Visit Webite</a>
-        </div>
-        <!-- cd-timeline-content -->
-      </div>
-      <!-- cd-timeline-block -->
-
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-location">
-          <img src="https://agencyintelligence.com/assets/images/favicon.ico" alt="AgencyIntelligence Icon">
-        </div>
-        <!-- cd-timeline-img -->
-
-        <div class="cd-timeline-content">
-          <h2>AgencyIntelligence</h2>
-          <p>AgencyIntelligence leads the industry as a complete and diversified solution for CRM software.</p>
-          <div class="cd-built-with">
-            <p>Built Using</p>
-            <p>Classic ASP, C#, Javascript</p>
-          </div>
-          <a href="https://agencyintelligence.com/" class="cd-read-more">Visit Website</a>
-        </div>
-        <!-- cd-timeline-content -->
-      </div>
-      <!-- cd-timeline-block -->
 
     </section>
     <section class="contact" id="contact">
@@ -144,21 +87,24 @@
           <div class="col-8">
             <form>
               <div class="form-group">
-                <label for="client_name">Name</label>
+                <label for="client_name" class="text-danger" v-if=contactErrors.name>A valid Name is required</label>
+                <label for="client_name" v-else>Name</label>
                 <input type="text" class="form-control required" name="name" placeholder="Full Name" v-model="contact.name">
               </div>
               <div class="form-group">
-                <label for="client_email">Email</label>
+                <label for="client_email" class="text-danger" v-if=contactErrors.email>A valid Email is required</label>
+                <label for="client_email" v-else>Email</label>
                 <input type="text" class="form-control required" name="email" placeholder="Contact Email" v-model="contact.email">
               </div>
               <div class="form-group">
-                <label for="client_subject">Subject</label>
+                <label for="client_subject" class="text-danger" v-if=contactErrors.subject>A valid Subject is required</label>
+                <label for="client_subject" v-else>Subject</label>
                 <input type="text" class="form-control required" name="subject" placeholder="What are we talking about?"
                   v-model="contact.subject">
               </div>
               <div class="form-group">
                 <label for="client_message">Message</label>
-                <textarea class="form-control" rows="3" v-model="contact.message"></textarea>
+                <textarea class="form-control" rows="3" v-model="contact.message" placeholder="I'd love to have you work with me on our next project!"></textarea>
 
                 <button class="btn btn-primary" v-on:click="submitForm($event)">
                   Contact Me!
@@ -179,55 +125,92 @@
     name: 'Index',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App',
         errors: [],
+        alert: {
+          show: false,
+          message: '',
+          type: ''
+        },
+        projects: null,
+        skills: null,
         contact: {
           name: null,
           email: null,
           subject: null,
           message: null
+        },
+        contactErrors: {
+          name: false,
+          email: false,
+          subject: false
         }
       }
     },
+    mounted() {
+      this.getProjects();
+    },
     methods: {
+      validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      },
+      getProjects: function () {
+        this.$contentful.getEntries('Projects')
+          .then((res) => {
+            this.projects = res.items;
+          })
+          .catch((error) => {
+            console.log(error);
+            this.alert.show = true;
+            this.alert.message = "There was an error retrieving the projects. Please refresh the page."
+          });
+      },
       submitForm: function (e) {
         e.preventDefault();
+        let info = this.contact;
+        let self = this;
         let requiredFields = document.getElementsByClassName("required");
         for (let i = 0; i < requiredFields.length; i++) {
           requiredFields[i].classList.remove("error")
         }
-        let info = this.contact;
+        this.contactErrors = {
+          name: false,
+          email: false,
+          subject: false
+        }
         if (!info.name) {
           document.getElementsByName("name")[0].classList.add("error");
+          this.contactErrors.name = true;
         }
-        if (!info.email) {
+        if (!info.email || !this.validateEmail(info.email)) {
           document.getElementsByName("email")[0].classList.add("error");
+          this.contactErrors.email = true;
         }
         if (!info.subject) {
           document.getElementsByName("subject")[0].classList.add("error");
+          this.contactErrors.subject = true;
         }
-        if (info.name && info.email && info.subject) {
+        if (info.name && info.email && info.subject && this.validateEmail(info.email)) {
           MailService.sendEmail({
             recipient: "ruslanbelyy@gmail.com",
             name: this.contact.name,
             fromEmail: this.contact.email,
             subject: this.contact.subject,
-            body: `Request Info: <br>
-                Name: ${this.contact.name}
-                <br>
-                Email:${this.contact.email}
-                <br>
-                Body:${this.contact.message}`
+            body: this.contact.message
           });
-          document.getElementById("alert").classList.remove("hidden");
+          this.alert.show = true;
+          this.alert.message = "Thank you for the request. I will reach out within 24 hours.";
           this.contact.email = "";
           this.contact.name = "";
           this.contact.message = "";
           this.contact.subject = "";
+          setTimeout(function () {
+            self.alert.show = false;
+          }, 5000);
         }
       },
       close: function () {
-        document.getElementById("alert").classList.add("hidden");
+        this.alert.show = false;
       }
     }
   }
@@ -241,6 +224,10 @@
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
+  }
+
+  .close:not(:disabled):not(.disabled){
+    padding: 0 10px;
   }
 
   .logo {
@@ -320,14 +307,15 @@
     display: none;
   }
 
-  .is-hidden{
+  .is-hidden {
     visibility: hidden;
   }
-  .bounce-in{
-          visibility: visible;
-      -webkit-animation: cd-bounce-2 0.6s;
-      -moz-animation: cd-bounce-2 0.6s;
-      animation: cd-bounce-2 0.6s;
+
+  .bounce-in {
+    visibility: visible;
+    -webkit-animation: cd-bounce-2 0.6s;
+    -moz-animation: cd-bounce-2 0.6s;
+    animation: cd-bounce-2 0.6s;
   }
 
   .btn-primary:not(:disabled):not(.disabled):active,
@@ -449,15 +437,15 @@
 
 
   #ai {
-    background-image: url('/static/images/ai.png');
+    background-image: url('/images/ai.png');
   }
 
   #hairbyirina {
-    background-image: url('/static/images/hair-by-irina.png');
+    background-image: url('/images/hair-by-irina.png');
   }
 
   #ilona {
-    background-image: url('/static/images/ilona.png');
+    background-image: url('/images/ilona.png');
   }
 
   .contact {
@@ -497,6 +485,7 @@ Primary style
 
   img {
     max-width: 100%;
+    border-radius: 50%;
   }
 
   h1,
@@ -530,7 +519,7 @@ Main components
 
 -------------------------------- */
   header {
-height: 10rem;
+    height: 10rem;
     line-height: 10rem;
     margin-top: 2em;
     text-align: center;
@@ -546,9 +535,9 @@ height: 10rem;
 
   @media only screen and (min-width: 1170px) {
     header {
-height: 10rem;
-    line-height: 10rem;
-    margin-top: 2em;
+      height: 10rem;
+      line-height: 10rem;
+      margin-top: 2em;
     }
 
     header h1 {
@@ -886,11 +875,12 @@ height: 10rem;
 
   @media only screen and (min-width: 1170px) {
 
-    .bounce-in{
+    .bounce-in {
       -webkit-animation: cd-bounce-2-inverse 0.6s;
       -moz-animation: cd-bounce-2-inverse 0.6s;
       animation: cd-bounce-2-inverse 0.6s;
     }
+
     /* inverse bounce effect on even content blocks */
   }
 

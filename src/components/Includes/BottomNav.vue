@@ -10,49 +10,67 @@
             </span>
         </div>
         <div class="icons">
-            <div class="stuff">
-                <a href="https://github.com/Peopleoff">
-                    <img class="websites" alt="Github Icon" src='/static/images/Github-Mark-Light.png' />
-                </a>
-                <a href="https://www.linkedin.com/in/ruslan-belyy-56052a134">
-                    <img class="websites" alt="Linkedin Icon" src='/static/images/Linked-White.png' />
-                </a>
-                <a href="https://codepen.io/peopleoff">
-                    <img class="websites" alt="Codepen Icon" src='/static/images/codepen-white.png' />
-                </a>
-            </div>
+            <a v-for="item in items" v-bind:key="item.title" :href="item.href" target="_blank">
+                <img class="websites" :src="item.icon" alt="">
+            </a>
         </div>
     </footer>
 </template>
 
 <script>
     export default {
-        name: "bottom-nav"
+        name: "bottom-nav",
+        data() {
+            return {
+                items: [{
+                        title: 'Github',
+                        href: 'https://github.com/peopleoff',
+                        icon: require('@/assets/Github-Mark-Light.png')
+                    },
+                    {
+                        title: 'Codepen',
+                        href: 'https://codepen.io/peopleoff/',
+                        icon: require('@/assets/codepen-white.png')
+                    },
+                    {
+                        title: 'LinkedIn',
+                        href: 'https://www.linkedin.com/in/ruslan-belyy-56052a134/',
+                        icon: require('@/assets/Linked-White.png')
+                    },
+                ],
+            }
+        },
     }
 </script>
 
 <style scoped>
     footer {
         padding: 1rem;
-        display: flex;;
+        display: flex;
+        ;
         justify-content: space-around;
         background-color: #8C43FF;
         color: white;
         border-top: 1px solid white;
     }
 
-    a{
+    a {
         color: white;
+    }
+
+    .icons {
+        height: 100%;
     }
 
     .logo {
         font-size: 2rem;
     }
 
-    embed{
+    embed {
         cursor: pointer;
     }
-    svg{
+
+    svg {
         cursor: pointer;
     }
 

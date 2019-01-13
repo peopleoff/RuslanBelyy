@@ -1,19 +1,20 @@
 <template>
   <div id="app">
     <TopNav/>
-    <router-view/>
+    <Index/>
     <BottomNav/>
   </div>
 </template>
 
 <script>
+import Index from './components/Index.vue'
   import TopNav from '@/components/Includes/TopNav'
   import BottomNav from '@/components/Includes/BottomNav'
 
 export default {
-  name: 'App',
-
+  name: 'app',
   components: {
+    Index,
     TopNav,
     BottomNav
   }
