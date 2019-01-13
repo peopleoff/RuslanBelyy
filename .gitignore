@@ -21,3 +21,4 @@ yarn-error.log*
 *.sw*
 
 Backup/
+src/components/Index.vue

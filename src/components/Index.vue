@@ -15,14 +15,8 @@
       </div>
     </section>
     <section class="personal-info">
-      <p>Hi, I'm Ruslan</p>
-      <span>
-        I'm currently studying for my BS in software engineering,
-        <br> I'm passionate about building excellent software that improves the lives of those around me.
-        <br> I specialize in creating software for clients ranging from individuals and small-businesses all the way to
-        large
-        enterprise corporations.
-      </span>
+      <h3>Hi, I'm Ruslan</h3>
+      <p class="description">{{description}}</p>
     </section>
     <section class="code-info">
       <div class="card">
@@ -31,21 +25,13 @@
             <div class="col-sm">
               <h3>Favorite Languages</h3>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">HTML / CSS / JavaScript</li>
-                <li class="list-group-item">Vue.js</li>
-                <li class="list-group-item">Node.js</li>
-                <li class="list-group-item">C#</li>
-                <li class="list-group-item">VBScript / ASP</li>
+                <li class="list-group-item" v-for="(skill, index) in skills.languages" v-bind:key="index" >{{skill}}</li>
               </ul>
             </div>
             <div class="col-sm">
               <h3>The Tools I Use</h3>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Github</li>
-                <li class="list-group-item">CodePen</li>
-                <li class="list-group-item">SQL</li>
-                <li class="list-group-item">MongoDB</li>
-                <li class="list-group-item">SASS</li>
+                <li class="list-group-item"  v-for="(skill, index) in skills.tools" v-bind:key="index" >{{skill}}</li>
               </ul>
             </div>
           </div>
@@ -131,8 +117,9 @@
           message: '',
           type: ''
         },
-        projects: null,
-        skills: null,
+        projects: [],
+        skills: [],
+        description: null,
         contact: {
           name: null,
           email: null,
@@ -157,10 +144,20 @@
       getProjects: function () {
         this.$contentful.getEntries('Projects')
           .then((res) => {
-            this.projects = res.items;
+            res.items.forEach(element => {
+              let type = element.sys.contentType.sys.id;
+              if(type == 'projects'){
+                this.projects.push(element);
+              };
+              if(type == 'skills'){
+                this.skills = element.fields;
+              };
+              if(type== 'description'){
+                this.description = element.fields.description;
+              }
+            });
           })
           .catch((error) => {
-            console.log(error);
             this.alert.show = true;
             this.alert.message = "There was an error retrieving the projects. Please refresh the page."
           });
@@ -241,6 +238,11 @@
 
   a {
     color: white;
+  }
+
+  .description{
+    width: 75%;
+    margin: 0 auto;
   }
 
   .intro {
