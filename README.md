@@ -1,4 +1,4 @@
-# template-default
+# RuslanBelyy.com
 
 ## Project setup
 ```
