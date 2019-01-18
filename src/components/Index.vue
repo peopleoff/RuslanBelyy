@@ -5,8 +5,8 @@
       {{alert.message}}
     </div>
     <section class="intro">
-      <h1 class="head-line">Web Developer</h1>
-      <h3 class="sub-header">Building Brands that tell a Story</h3>
+      <h1 class="head-line">Ruslan Belyy</h1>
+      <h3 class="sub-header">Full Stack Developer <strong>/</strong> Node <strong>/</strong> Vue</h3>
       <img class="avatar" src='images/avatars.svg' />
       <div class="intro-footer">
         <div class="intro-hero">
@@ -14,24 +14,25 @@
         </div>
       </div>
     </section>
-    <section class="personal-info">
-      <h3>Hi, I'm Ruslan</h3>
-      <p class="description">{{description}}</p>
+    <section class="personal-info flex-center">
+      <p>As a developer I strive
+        for efficiency.
+        But, in today's online world, being fast and responsive just doesn't cut it.
+        Being effective today requires a keen balance between passion, optimization, and aesthetics.</p>
     </section>
     <section class="code-info">
       <div class="card">
-        <div class="container">
+        <h3>Skill Set</h3>
+        <div class="container-fluid">
           <div class="row">
             <div class="col-sm">
-              <h3>Favorite Languages</h3>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item" v-for="(skill, index) in skills.languages" v-bind:key="index" >{{skill}}</li>
+                <li class="list-group-item" v-for="(skill, index) in skills.languages" v-bind:key="index">{{skill}}</li>
               </ul>
             </div>
             <div class="col-sm">
-              <h3>The Tools I Use</h3>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"  v-for="(skill, index) in skills.tools" v-bind:key="index" >{{skill}}</li>
+                <li class="list-group-item" v-for="(skill, index) in skills.tools" v-bind:key="index">{{skill}}</li>
               </ul>
             </div>
           </div>
@@ -53,12 +54,8 @@
         <div class="cd-timeline-content">
           <h2>{{items.fields.name}}</h2>
           <p v-html="items.fields.description"></p>
-          <div class="cd-built-with">
-            <p>Built Using</p>
-            <p v-if="items.fields.frontEnd">Front-End: <span v-for="(tech,index) in items.fields.frontEnd" v-bind:key="index">{{tech}},
-              </span></p>
-            <p v-if="items.fields.backEnd">Back-End: <span v-for="(tech,index) in items.fields.backEnd" v-bind:key="index">{{tech}},
-              </span></p>
+          <div class="cd-built-with flex-left">
+            <span v-for="(tech,index) in items.fields.frontEnd" v-bind:key="index">{{tech}} </span>
           </div>
           <a :href="items.fields.projectLink" class="cd-read-more">View Project</a>
         </div>
@@ -68,30 +65,28 @@
     </section>
     <section class="contact" id="contact">
       <div class="container">
-        <h2>Contact Me</h2>
+        <h2>Get In Touch</h2>
+        <p>Lets talk about new projects, freelance inquiry, or just a chat.</p>
         <div class="row justify-content-center">
-          <div class="col-8">
+          <div class="col-12">
             <form>
-              <div class="form-group">
-                <label for="client_name" class="text-danger" v-if=contactErrors.name>A valid Name is required</label>
-                <label for="client_name" v-else>Name</label>
-                <input type="text" class="form-control required" name="name" placeholder="Full Name" v-model="contact.name">
-              </div>
-              <div class="form-group">
-                <label for="client_email" class="text-danger" v-if=contactErrors.email>A valid Email is required</label>
-                <label for="client_email" v-else>Email</label>
-                <input type="text" class="form-control required" name="email" placeholder="Contact Email" v-model="contact.email">
-              </div>
-              <div class="form-group">
-                <label for="client_subject" class="text-danger" v-if=contactErrors.subject>A valid Subject is required</label>
-                <label for="client_subject" v-else>Subject</label>
-                <input type="text" class="form-control required" name="subject" placeholder="What are we talking about?"
-                  v-model="contact.subject">
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="client_name">Name</label>
+                    <input type="text" class="form-control required" name="name" v-model="contact.name">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="client_email">Email</label>
+                    <input type="text" class="form-control required" name="email" v-model="contact.email">
+                  </div>
+                </div>
               </div>
               <div class="form-group">
                 <label for="client_message">Message</label>
-                <textarea class="form-control" rows="3" v-model="contact.message" placeholder="I'd love to have you work with me on our next project!"></textarea>
-
+                <textarea class="form-control required" rows="3" name="message" v-model="contact.message"></textarea>
                 <button class="btn btn-primary" v-on:click="submitForm($event)">
                   Contact Me!
                 </button>
@@ -138,7 +133,8 @@
     },
     methods: {
       validateEmail(email) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var re =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
       },
       getProjects: function () {
@@ -146,18 +142,18 @@
           .then((res) => {
             res.items.forEach(element => {
               let type = element.sys.contentType.sys.id;
-              if(type == 'projects'){
+              if (type == 'projects') {
                 this.projects.push(element);
-              };
-              if(type == 'skills'){
+              }
+              if (type == 'skills') {
                 this.skills = element.fields;
-              };
-              if(type== 'description'){
+              }
+              if (type == 'description') {
                 this.description = element.fields.description;
               }
             });
           })
-          .catch((error) => {
+          .catch(() => {
             this.alert.show = true;
             this.alert.message = "There was an error retrieving the projects. Please refresh the page."
           });
@@ -170,30 +166,24 @@
         for (let i = 0; i < requiredFields.length; i++) {
           requiredFields[i].classList.remove("error")
         }
-        this.contactErrors = {
-          name: false,
-          email: false,
-          subject: false
-        }
-        if (!info.name) {
-          document.getElementsByName("name")[0].classList.add("error");
-          this.contactErrors.name = true;
+        if (!info.message) {
+          document.getElementsByName("message")[0].classList.add("error");
+          document.getElementsByName("message")[0].focus();
         }
         if (!info.email || !this.validateEmail(info.email)) {
           document.getElementsByName("email")[0].classList.add("error");
-          this.contactErrors.email = true;
+          document.getElementsByName("email")[0].focus();
         }
-        if (!info.subject) {
-          document.getElementsByName("subject")[0].classList.add("error");
-          this.contactErrors.subject = true;
+        if (!info.name) {
+          document.getElementsByName("name")[0].classList.add("error");
+          document.getElementsByName("name")[0].focus();
         }
-        if (info.name && info.email && info.subject && this.validateEmail(info.email)) {
+
+        if (info.name && info.email && this.validateEmail(info.email) && info.message) {
           MailService.sendEmail({
-            recipient: "ruslanbelyy@gmail.com",
-            name: this.contact.name,
-            fromEmail: this.contact.email,
-            subject: this.contact.subject,
-            body: this.contact.message
+            Name: this.contact.name,
+            Email: this.contact.email,
+            Body: this.contact.message
           });
           this.alert.show = true;
           this.alert.message = "Thank you for the request. I will reach out within 24 hours.";
@@ -215,6 +205,30 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .cd-built-with span {
+    border-radius: 5px;
+    border: 2px solid #8C43FF;
+    padding: 8px;
+    margin: 5px;
+    font-size: .85em;
+  }
+
+  .form-control {
+    border: 0;
+  }
+
+  .btn-primary:focus,
+  .btn-primary.focus {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .btn-primary:not(:disabled):not(.disabled):active:focus,
+  .btn-primary:not(:disabled):not(.disabled).active:focus,
+  .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+  }
+
   .error {
     border: 1px solid red;
     animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
@@ -223,7 +237,7 @@
     perspective: 1000px;
   }
 
-  .close:not(:disabled):not(.disabled){
+  .close:not(:disabled):not(.disabled) {
     padding: 0 10px;
   }
 
@@ -240,7 +254,7 @@
     color: white;
   }
 
-  .description{
+  .description {
     width: 75%;
     margin: 0 auto;
   }
@@ -278,7 +292,7 @@
   }
 
   .personal-info p {
-    font-weight: 800;
+    width: 50%;
   }
 
   .btn-outline-primary {
@@ -311,6 +325,18 @@
 
   .is-hidden {
     visibility: hidden;
+  }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-left {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   .bounce-in {
@@ -437,19 +463,6 @@
     }
   }
 
-
-  #ai {
-    background-image: url('/images/ai.png');
-  }
-
-  #hairbyirina {
-    background-image: url('/images/hair-by-irina.png');
-  }
-
-  #ilona {
-    background-image: url('/images/ilona.png');
-  }
-
   .contact {
     background-color: #8C43FF;
     color: white;
@@ -474,6 +487,7 @@ Primary style
   }
 
   body {
+    background-color: #3f3f3f;
     font-size: 100%;
     font-family: "Droid Serif", serif;
     color: #7f8c97;
@@ -485,7 +499,7 @@ Primary style
     font-family: "Open Sans", sans-serif;
   }
 
-  img {
+  #cd-timeline img {
     max-width: 100%;
     border-radius: 50%;
   }
@@ -607,7 +621,7 @@ Main components
 
   .cd-timeline-img {
     position: absolute;
-    top: 0;
+    top: 25%;
     left: 0;
     width: 40px;
     height: 40px;
@@ -617,25 +631,13 @@ Main components
 
   .cd-timeline-img img {
     display: block;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     position: relative;
     left: 50%;
     top: 50%;
-    margin-left: -12px;
-    margin-top: -12px;
-  }
-
-  .cd-timeline-img.cd-picture {
-    background: #75ce66;
-  }
-
-  .cd-timeline-img.cd-movie {
-    background: #c03b44;
-  }
-
-  .cd-timeline-img.cd-location {
-    background: #f0ca45;
+    margin-left: -14px;
+    margin-top: -14px;
   }
 
   @media only screen and (min-width: 1170px) {
@@ -723,6 +725,7 @@ Main components
     background: #ffffff;
     border-radius: 0.25em;
     padding: 1em;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
   }
 
   .cd-timeline-content::after {
@@ -773,28 +776,12 @@ Main components
     opacity: .7;
   }
 
-  .cd-timeline-content::before {
-    content: '';
-    position: absolute;
-    top: 16px;
-    right: 100%;
-    height: 0;
-    width: 0;
-    border: 7px solid transparent;
-    border-right: 7px solid #ffffff;
-  }
-
   .cd-built-with {
     margin: 10px 0;
   }
 
   .cd-built-with p:first-child {
     font-weight: 600;
-  }
-
-  .cd-built-with p {
-    padding: 0;
-    margin: 0;
   }
 
   .cd-read-more:hover {
@@ -1029,8 +1016,16 @@ Main components
   /* // Medium devices (tablets, less than 992px) */
 
   @media (max-width: 991.98px) {
+    .cd-timeline-block {
+      margin: 1rem 0;
+    }
+
     .personal-info {
       padding-bottom: 3em;
+    }
+
+    .personal-info p {
+      font-size: 1rem;
     }
   }
 

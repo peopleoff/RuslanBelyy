@@ -2,16 +2,14 @@
     <footer>
         <div class="contact">
             <span>
-                <a href="tel:9419610045">(941) 961-0045</a>
-            </span>
-            <br>
-            <span>
-                <a href="mailto:ruslanbelyy@gmail.com">Ruslanbelyy@gmail.com</a>
+                <a href="mailto:ruslan@ruslanbelyy.com">
+                    <img class="email" :src="require('@/assets/envelope-solid.svg')" alt="Email Icon">Ruslan@ruslanbelyy.com</a>
             </span>
         </div>
         <div class="icons">
             <a v-for="item in items" v-bind:key="item.title" :href="item.href" target="_blank">
                 <img class="websites" :src="item.icon" alt="">
+                {{item.title}}
             </a>
         </div>
     </footer>
@@ -47,14 +45,18 @@
     footer {
         padding: 1rem;
         display: flex;
-        ;
         justify-content: space-around;
+        align-items: center;
         background-color: #8C43FF;
         color: white;
-        border-top: 1px solid white;
+        flex-wrap: wrap;
     }
 
     a {
+        color: white;
+    }
+
+    a:hover {
         color: white;
     }
 
@@ -76,8 +78,15 @@
 
     .websites {
         height: 5%;
-        width: 3rem;
+        width: 2rem;
         margin: 0 15px;
+    }
+
+    .email {
+        height: 5%;
+        width: 1rem;
+        margin: 0 5px;
+        color: white;
     }
 
     .navbar {
