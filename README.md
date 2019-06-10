@@ -1,29 +1,34 @@
-# RuslanBelyy.com
+RuslanBelyy.com
+============
 
-## Project setup
-```
-npm install
-```
+My web developer portfolio showcasing some of my skills and past projects!
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+![Site Preview](https://i.imgur.com/TrwMNoU.png)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+---
 
-### Run your tests
-```
-npm run test
-```
+## Built With
+ - Vue.js
+ - Contentful as a headless CMS
+ - Bootstrap
 
-### Lints and fixes files
-```
-npm run lint
-```
+---
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Requirements
+ - Node.js
+ - Npm
+ - Vue CLI
+
+---
+
+## Setup
+Clone this repo to your desktop and run `npm install` to install all the dependencies.
+
+---
+
+## Usage
+After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
+
+Once the dependencies are installed, you can run  `npm run serve` to start the application. You will then be able to access it at localhost:8080
+
+---
