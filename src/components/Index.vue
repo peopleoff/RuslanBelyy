@@ -7,7 +7,7 @@
     <section class="intro">
       <h1 class="head-line">Ruslan Belyy</h1>
       <h3 class="sub-header">Full Stack Developer <strong>/</strong> Node <strong>/</strong> Vue</h3>
-      <img class="avatar" src='images/avatars.svg' />
+      <img class="avatar" src='images/avatars.svg' alt="Avatar image of Ruslan Belyy" />
       <div class="intro-footer">
         <div class="intro-hero">
           <img class="hero img-responsive" src="images/hero.png" alt="">
@@ -73,20 +73,20 @@
               <div class="row">
                 <div class="col-6">
                   <div class="form-group">
-                    <label for="client_name">Name</label>
-                    <input type="text" class="form-control required" name="name" v-model="contact.name">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control required" name="name" v-model="contact.name">
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="form-group">
-                    <label for="client_email">Email</label>
-                    <input type="text" class="form-control required" name="email" v-model="contact.email">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" class="form-control required" name="email" v-model="contact.email">
                   </div>
                 </div>
               </div>
               <div class="form-group">
-                <label for="client_message">Message</label>
-                <textarea class="form-control required" rows="3" name="message" v-model="contact.message"></textarea>
+                <label for="message">Message</label>
+                <textarea id="message" class="form-control required" rows="3" name="message" v-model="contact.message"></textarea>
                 <button class="btn btn-primary" v-on:click="submitForm($event)">
                   Contact Me!
                 </button>
