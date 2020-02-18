@@ -7,7 +7,7 @@
             </span>
         </div>
         <div class="icons">
-            <a v-for="item in items" v-bind:key="item.title" :href="item.href" target="_blank">
+            <a v-for="item in items" v-bind:key="item.title" :href="item.href" target="_blank" rel="noreferrer">
                 <img class="websites" :src="item.icon" alt="">
                 {{item.title}}
             </a>
