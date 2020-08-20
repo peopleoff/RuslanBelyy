@@ -1,87 +1,68 @@
 <template>
-    <nav class="navbar navbar-expand-lg d-flex justify-content-between shadow">
-        <div class="logo">
-            Ruslan
-            <span class="primary">Belyy</span>
-        </div>
-        <button class="btn btn-outline-primary my-2 my-sm-0" v-on:click="scrollDown()">
-            Contact Me
-        </button>
-    </nav>
+  <nav class="navbar navbar-expand-lg d-flex justify-content-between shadow">
+    <div class="logo">
+      Ruslan
+      <span class="primary">Belyy</span>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+      <ThemeToggle />
+      <button class="btn btn-outline-primary my-2 my-sm-0" v-on:click="scrollDown()">Contact Me</button>
+    </div>
+  </nav>
 </template>
 
 <script>
-    export default {
-        name: "top-nav",
-        data() {
-            return {
-
-            }
-        },
-        methods: {
-            scrollDown: function () {
-                window.scroll({
-                    top: 100000,
-                    behavior: 'smooth'
-                });
-            },
-        }
-    }
+import ThemeToggle from "@/components/ThemeToggle.vue";
+export default {
+  name: "top-nav",
+  components: {
+    ThemeToggle,
+  },
+  data() {
+    return {};
+  },
+  methods: {
+    scrollDown: function () {
+      window.scroll({
+        top: 100000,
+        behavior: "smooth",
+      });
+    },
+  },
+};
 </script>
 
 <style scoped>
-    nav {
-        position: fixed;
-        width: 100%;
-        background: white;
-    }
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: var(--color-bg);
+}
 
-    .shadow {
-        z-index: 10000;
-        box-shadow: 0 6px 2px -2px #eee;
-    }
+.right-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .logo {
-        font-size: 2rem;
-    }
+.shadow {
+  z-index: 10000;
+  box-shadow: 0 6px 2px -2px #eee;
+}
 
-    .navbar {
-        padding: .5rem 2rem;
-    }
+.logo {
+  font-size: 2rem;
+}
 
-    a {
-        color: #8C43FF
-    }
+.navbar {
+  padding: 0.5rem 2rem;
+}
 
-    a:hover {
-        color: white;
-    }
+a {
+  color: #8c43ff;
+}
 
-    .primary {
-        color: #8C43FF;
-        font-weight: bold;
-    }
-
-    .btn-outline-primary {
-        color: #8C43FF;
-        background-color: transparent;
-        background-image: none;
-        border-color: #8C43FF;
-    }
-
-    .btn-outline-primary:hover {
-        color: #fff;
-        background-color: #8C43FF;
-        background-image: none;
-        border-color: #fff;
-    }
-
-    .btn-outline-primary:not(:disabled):not(.disabled):active,
-    .btn-outline-primary:not(:disabled):not(.disabled).active,
-    .show>.btn-outline-primary.dropdown-toggle {
-        color: #fff;
-        background-color: #8C43FF;
-        background-image: none;
-        border-color: #fff;
-    }
+a:hover {
+  color: white;
+}
 </style>
