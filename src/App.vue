@@ -1,32 +1,27 @@
 <template>
   <div id="app">
-    <TopNav/>
-    <Index/>
-    <BottomNav/>
+    <TopNav />
+    <Index />
+    <BottomNav />
   </div>
 </template>
 
 <script>
-import Index from './components/Index.vue'
-  import TopNav from '@/components/Includes/TopNav'
-  import BottomNav from '@/components/Includes/BottomNav'
+import Index from "@/pages/Index.vue";
+import TopNav from "@/components/Includes/TopNav";
+import BottomNav from "@/components/Includes/BottomNav";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Index,
     TopNav,
-    BottomNav
+    BottomNav,
   }
-}
+};
 </script>
 
 <style>
-@import'~bootstrap/dist/css/bootstrap.css';
-#app {
-  font-family: 'Lato', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "/css/main.css";
 </style>
