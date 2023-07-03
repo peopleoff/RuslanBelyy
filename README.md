@@ -1,34 +1,63 @@
-RuslanBelyy.com
-============
+# Nuxt 3 Minimal Starter
 
-My web developer portfolio showcasing some of my skills and past projects!
-
-![Site Preview](https://i.imgur.com/TrwMNoU.png)
-
----
-
-## Built With
- - Vue.js
- - Contentful as a headless CMS
- - Bootstrap
-
----
-
-## Requirements
- - Node.js
- - Npm
- - Vue CLI
-
----
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
-Clone this repo to your desktop and run `npm install` to install all the dependencies.
 
----
+Make sure to install the dependencies:
 
-## Usage
-After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
+```bash
+# npm
+npm install
 
-Once the dependencies are installed, you can run  `npm run serve` to start the application. You will then be able to access it at localhost:8080
+# pnpm
+pnpm install
 
----
+# yarn
+yarn install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm run dev
+
+# yarn
+yarn dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
