@@ -1,4 +1,44 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const word = ref('')
+const letters = 'abcdefghijklmnopqrstuvwxyz'
+const passions = ['poker player', 'wood worker', 'gamer']
+
+function getRandomWord(): string {
+    //save the index of the word we return so we don't return the same word twice
+    const randomIndex = Math.floor(Math.random() * passions.length)
+
+    return passions[randomIndex]
+}
+function changePassion() {
+    let interval: string | number | NodeJS.Timeout | undefined
+    let iteration = 0
+    clearInterval(interval)
+    const passion = getRandomWord()
+
+    interval = setInterval(() => {
+        word.value = passion
+            .split('')
+            .map((letter: any, index: number) => {
+                if (index < iteration) {
+                    return passion[index]
+                }
+
+                return letters[Math.floor(Math.random() * 26)]
+            })
+            .join('')
+
+        if (iteration >= word.value.length) {
+            clearInterval(interval)
+        }
+
+        iteration += 1 / 3
+    }, 30)
+}
+
+onMounted(() => {
+    changePassion()
+})
+</script>
 
 <template>
     <div>
@@ -8,7 +48,11 @@
                     <div class="max-w-2xl">
                         <h1
                             class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                            Software designer, founder, and amateur astronaut.
+                            Software designer, founder, and amateur
+                            <span class="passion" @mouseenter="changePassion">{{
+                                word
+                            }}</span
+                            >.
                         </h1>
                         <p
                             class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
