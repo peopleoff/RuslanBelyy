@@ -22,7 +22,7 @@ const lightStyle = computed(() => {
             <div
                 class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
                 <Header />
-                <main class="mt-16 sm:mt-32 px-4 md:px-20">
+                <main class="my-16 sm:my-32 px-4 md:px-20">
                     <NuxtPage />
                 </main>
             </div>

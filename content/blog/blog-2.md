@@ -1,6 +1,6 @@
 ---
-title: 'Cheating the system'
-date: '2023-07-01'
+title: 'Blog 2'
+date: '2023-02-01'
 description: 'So let’s waste more money and time by building a bot that will check their site and text me if the products I want are in stock'
 ---
 
