@@ -31,6 +31,12 @@
                                 href="https://linkedin.com">
                                 <icons-linkedin />
                             </a>
+                            <a
+                                class="group -m-1 p-1"
+                                aria-label="Follow on LinkedIn"
+                                href="https://linkedin.com">
+                                <icons-codepen />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -38,7 +44,7 @@
         </div>
     </div>
     <div class="mt-24 md:mt-28">
-        <div class="grid grid-cols-1 gap-20 lg:grid-cols-3">
+        <div class="grid grid-cols-1 md:gap-x-20 gap-y-20 lg:grid-cols-3">
             <div class="col-span-2">
                 <h2
                     class="text-xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-2xl mb-10">

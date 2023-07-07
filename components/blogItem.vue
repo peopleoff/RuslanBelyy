@@ -52,3 +52,11 @@ defineProps<{
         </div>
     </article>
 </template>
+
+
+<style>
+.ct-109545{
+    color: blue;
+}
+
+</style>
