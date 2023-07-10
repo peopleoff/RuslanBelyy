@@ -4,6 +4,15 @@ export default defineNuxtConfig({
     app: {
         head: {
             titleTemplate: 'Ruslan Belyy - Software Developer',
+            htmlAttrs: {
+                lang: 'en',
+            },
+            meta: [
+                {
+                    name: 'description',
+                    content: 'My Website?'
+                }
+            ]
         },
     },
     modules: [
