@@ -16,8 +16,12 @@ const lightStyle = computed(() => {
 
 <template>
     <div class="inset-0 flex justify-center sm:px-8 z-30">
-        <div id="light" class="transition delay-300" :data-y="y" :style="lightStyle"></div>
-        <div id="blur"></div>
+        <div
+            id="light"
+            class="transition delay-300 pointer-events-none"
+            :data-y="y"
+            :style="lightStyle"></div>
+        <div id="blur" class="pointer-events-none"></div>
         <div class="flex w-full max-w-7xl lg:px-8">
             <div
                 class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
@@ -32,14 +36,14 @@ const lightStyle = computed(() => {
 
 <style scoped>
 #light {
-    height: 6vmax;
+    height: 25vmax;
     aspect-ratio: 1;
     position: absolute;
     translate: -50% -50%;
     border-radius: 50%;
     background: linear-gradient(to right, aquamarine, mediumpurple);
-    filter: blur(20px);
+    filter: blur(70px);
     animation: rotate 20s infinite;
-    opacity: 0.2;
+    opacity: 0.3;
 }
 </style>

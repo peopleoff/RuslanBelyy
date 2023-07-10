@@ -19,10 +19,6 @@ const navigation = [
         url: '/projects',
     },
 ]
-
-// const currentRoute = computed(() => {
-//     return true
-// })
 </script>
 
 <template>
