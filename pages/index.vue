@@ -34,19 +34,19 @@
                             <a
                                 class="group -m-1 p-1"
                                 aria-label="Follow on GitHub"
-                                href="https://github.com">
+                                href="https://github.com/peopleoff">
                                 <icons-github />
                             </a>
                             <a
                                 class="group -m-1 p-1"
                                 aria-label="Follow on LinkedIn"
-                                href="https://linkedin.com">
+                                href="https://www.linkedin.com/in/ruslan-belyy-56052a134">
                                 <icons-linkedin />
                             </a>
                             <a
                                 class="group -m-1 p-1"
-                                aria-label="Follow on LinkedIn"
-                                href="https://linkedin.com">
+                                aria-label="Follow on codepen"
+                                href="https://codepen.io/peopleoff">
                                 <icons-codepen />
                             </a>
                         </div>

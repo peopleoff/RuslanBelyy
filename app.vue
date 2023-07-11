@@ -18,7 +18,7 @@ const lightStyle = computed(() => {
     <div class="inset-0 flex justify-center sm:px-8 z-30">
         <div
             id="light"
-            class="transition delay-300 pointer-events-none"
+            class="pointer-events-none"
             :data-y="y"
             :style="lightStyle"></div>
         <div id="blur" class="pointer-events-none"></div>
@@ -43,7 +43,6 @@ const lightStyle = computed(() => {
     border-radius: 50%;
     background: linear-gradient(to right, aquamarine, mediumpurple);
     filter: blur(70px);
-    animation: rotate 20s infinite;
     opacity: 0.3;
 }
 </style>
