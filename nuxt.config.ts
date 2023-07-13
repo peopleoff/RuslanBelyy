@@ -10,7 +10,7 @@ export default defineNuxtConfig({
             meta: [
                 {
                     name: 'description',
-                    content: 'My Website?'
+                    content: '👋 Hey I’m Ruslan and I love to build things for the web.'
                 }
             ]
         },

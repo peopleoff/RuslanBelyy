@@ -8,7 +8,7 @@
                     <div class="max-w-2xl">
                         <h1
                             class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                            Software engineer, founder, and inspiring
+                            Software engineer, founder, and aspiring
                             <random-passion />.
                         </h1>
                         <p
