@@ -64,6 +64,7 @@
                             </div>
                         </div>
                         <div class="lg:pl-20">
+                            <!-- <resume/> -->
                             <ul role="list">
                                 <li class="mt-4 flex">
                                     <a
