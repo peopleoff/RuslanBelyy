@@ -23,8 +23,7 @@
                         <div class="lg:order-first lg:row-span-2">
                             <h1
                                 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                                🤙 I’m Ruslan Belyy. Currently working on beating
-                                Elon to the moon.
+                                🤙 I’m Ruslan Belyy. I just like to build cool shit.
                             </h1>
                             <div
                                 class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
@@ -50,7 +49,7 @@
                                     the way.
                                 </p>
                                 <p>
-                                    Nowadays you'll find me as the CTO of
+                                    Nowadays you'll find me as the COO of
                                     Intruity, where I help arcitect and enginner
                                     the soltuoins that enable our developers and
                                     technology to scale. I'm also a co-founder

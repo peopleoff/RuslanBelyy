@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const word = ref('')
 const letters = 'abcdefghijklmnopqrstuvwxyz'
-const passions = ['wood worker', 'poker player', 'gamer']
+const passions = ['wood worker', 'poker player', 'gamer', 'cigar aficionado']
 const lastPassionIndex = ref(0)
 
 function showNextPassion(): string {
@@ -46,5 +46,5 @@ onMounted(() => {
 </script>
 
 <template>
-    <span class="passion" @mouseenter="changePassion">{{ word }}</span>
+    <span class="passion underline decoration-teal-500" @mouseenter="changePassion">{{ word }}</span>
 </template>

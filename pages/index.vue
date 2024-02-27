@@ -7,14 +7,14 @@
                 <div class="mx-auto">
                     <div class="max-w-2xl">
                         <h1
-                            class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+                            class="text-4xl py-4 font-bold tracking-tight sm:text-5xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
                             Software engineer, founder, and aspiring
                             <random-passion />.
                         </h1>
                         <p
                             class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
                             👋 Hey I’m Ruslan and I love to build things for the
-                            web. Currently working as the CTO of
+                            web. Currently working as the COO of
                             <a
                                 href="https://intruity.com/"
                                 target="_blank"
@@ -59,7 +59,7 @@
         <div class="grid grid-cols-1 md:gap-x-20 gap-y-20 lg:grid-cols-3">
             <div class="col-span-2">
                 <h2
-                    class="text-xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-2xl">
+                    class="text-xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-2xl mb-10">
                     Projects
                 </h2>
                 <project-list />

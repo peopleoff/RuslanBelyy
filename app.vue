@@ -6,6 +6,7 @@ useHead({
     },
 })
 
+
 const lightStyle = computed(() => {
     return {
         top: `${y.value}px`,
