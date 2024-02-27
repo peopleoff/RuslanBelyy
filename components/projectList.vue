@@ -1,6 +1,18 @@
 <script setup lang="ts">
 const projects = [
     {
+        title: 'RequestView',
+        description:
+            'A tool that allows users to generate a unique URL for testing their requests, enabling them to send requests and view them with certainty, eliminating guesswork about request dispatch and appearance.',
+        link: 'https://requestview.io/',
+    },
+    {
+        title: 'AstroView',
+        description:
+            'Astro is an AI-powered astrology website offering daily horoscopes and insightful guidance on life\'s questions, delivering the wisdom of the stars with precision and empathy.',
+        link: 'https://astroview.io/',
+    },
+    {
         title: 'BillView',
         description:
             'Unlike traditional budgeting tools, BillView offers a fresh and innovative approach, empowering you to manage your finances with ease and efficiency.',
@@ -25,9 +37,7 @@ const projects = [
         link: '/blog/ubiquti-checker',
     },
 ]
-function skew(index: number) {
-    return index % 2 == 0 ? 'rotate-2' : '-rotate-2'
-}
+
 </script>
 
 <template>
@@ -35,8 +45,7 @@ function skew(index: number) {
         role="list"
         class="project-list grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16 transition delay-150">
         <project-item
-            v-for="(project, index) in projects"
-            class="hover:rotate-0"
+            v-for="project in projects"
             :project="project" />
     </ul>
 </template>
