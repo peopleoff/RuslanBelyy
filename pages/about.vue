@@ -48,18 +48,6 @@
                                     advancements and tackle new challenges along
                                     the way.
                                 </p>
-                                <p>
-                                    Nowadays you'll find me as the COO of
-                                    Intruity, where I help arcitect and enginner
-                                    the soltuoins that enable our developers and
-                                    technology to scale. I'm also a co-founder
-                                    of PixelDevs, our ambition is to transform
-                                    your concepts into tangible realities,
-                                    making it easier to place your vision
-                                    directly into your clients' hands. Feel free
-                                    to take a look around my portfolio to see
-                                    what I've been up to.
-                                </p>
                             </div>
                         </div>
                         <div class="lg:pl-20">
@@ -102,7 +90,7 @@
                                         href="mailto:spencer@planetaria.tech">
                                         <icons-email />
                                         <span class="ml-4">
-                                            ruslan@pixeldevs.digital
+                                            ruslan@ruslanbelyy.com
                                         </span>
                                     </a>
                                 </li>

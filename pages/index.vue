@@ -14,21 +14,7 @@
                         <p
                             class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
                             👋 Hey I’m Ruslan and I love to build things for the
-                            web. Currently working as the COO of
-                            <a
-                                href="https://intruity.com/"
-                                target="_blank"
-                                class="underline"
-                                >Intruity</a
-                            >, and co-founder of
-                            <a
-                                href="https://pixeldevs.digital"
-                                target="_blank"
-                                class="underline"
-                                >PixelDevs</a
-                            >. My driving passion is building intuitive and
-                            scalable web apps from server architecture to
-                            development
+                            web.
                         </p>
                         <div class="mt-6 flex gap-6">
                             <a
@@ -63,9 +49,6 @@
                     Projects
                 </h2>
                 <project-list />
-                <p class="my-4 text-base text-zinc-600 dark:text-zinc-400">
-                    To see some of my client work, check me out at <a href="https://pixeldevs.digital" class="underline cursor-pointer">PixelDevs</a>
-                </p>
             </div>
             <div>
                 <h2
