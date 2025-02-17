@@ -19,10 +19,10 @@ const projects = [
         link: 'https://billview.io',
     },
     {
-        title: 'Floob',
+        title: 'TCGView',
         description:
-            'Say goodbye to the frustration of trying to synchronize videos across different devices and start times. With Floob, you can now watch your favorite videos with your friends in real time, no matter where they are.',
-        link: 'https://floob.gg',
+            'TCGView is a tool that allows users to view and manage their TCG collections, enabling them to track their collections and share them with others.',
+        link: 'https://tcgview.app/',
     },
     {
         title: 'Readit',
@@ -31,10 +31,10 @@ const projects = [
         link: 'https://github.com/peopleoff/readit',
     },
     {
-        title: 'Ubiquiti Checker',
+        title: 'Alertifi',
         description:
-            "A game-changing bot designed to help you secure those hard-to-find items by automatically checking their availability and notifying you as soon as they're back in stock. Say goodbye to missing out on limited releases",
-        link: '/blog/ubiquti-checker',
+            "A game-changing site designed to help you secure those hard-to-find items by automatically checking their availability and notifying you as soon as they're back in stock. Say goodbye to missing out on limited releases",
+        link: 'https://alertifi.io/',
     },
 ]
 

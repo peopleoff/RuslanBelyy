@@ -31,9 +31,9 @@
                             </a>
                             <a
                                 class="group -m-1 p-1"
-                                aria-label="Follow on codepen"
-                                href="https://codepen.io/peopleoff">
-                                <icons-codepen />
+                                aria-label="Follow on PixelDevs"
+                                href="https://pixeldevs.digital/">
+                                <icons-pixeldevs />
                             </a>
                         </div>
                     </div>

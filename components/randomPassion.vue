@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const word = ref('')
 const letters = 'abcdefghijklmnopqrstuvwxyz'
-const passions = ['wood worker', 'poker player', 'gamer', 'cigar aficionado']
+const passions = ['wood worker', 'poker player', 'gamer', 'cigar aficionado', 'Chess Grandmaster']
 const lastPassionIndex = ref(0)
 
 function showNextPassion(): string {
