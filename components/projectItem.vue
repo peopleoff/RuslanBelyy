@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-    <li class="project-item group relative flex flex-col gap-6 px-2 py-4 rounded-2xl bg-zinc-900 shadow-zinc-800/5 ring-1 ring-zinc-900/5 border border-zinc-800 h-full">
+    <li class="project-item group relative flex flex-col gap-6 px-2 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 shadow-zinc-800/5 ring-1 ring-zinc-900/5 border border-zinc-800 h-full">
         <h2 class="text-base font-semibold text-zinc-800 dark:text-zinc-100">
             {{ project.title }}
         </h2>
