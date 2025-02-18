@@ -1,7 +1,9 @@
 <script setup lang="ts">
 const { data } = useAsyncData('blogList', () => {
-    return queryContent('/blog').sort({ date: -1 }).find()
+    return queryCollection('content').all()
 })
+
+console.log(data.value)
 </script>
 
 <template>

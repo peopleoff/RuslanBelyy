@@ -16,6 +16,16 @@ export default defineNuxtConfig({
             ]
         },
     },
+    content: {
+        build: {
+            markdown: {
+                highlight: {
+                    theme: 'nord',
+                    langs: ['json', 'js', 'javascript', 'jsx', 'ts', 'typescript', 'tsx'],
+                }
+            }
+        }
+    },
     modules: [
         '@nuxtjs/tailwindcss',
         '@nuxtjs/google-fonts',
@@ -23,11 +33,6 @@ export default defineNuxtConfig({
         '@vueuse/nuxt',
         '@nuxt/content',
     ],
-    content: {
-        highlight: {
-            theme: 'material-theme',
-        },
-    },
     googleFonts: {
         families: {
             Inter: [400, 700],

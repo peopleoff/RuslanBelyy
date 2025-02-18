@@ -35,7 +35,7 @@ First, the bot visits the page by making a GET request.
 
 We’ll use axios to make the request.
 
-```jsx
+```js
 const axios = require('axios')
 
 axios
@@ -54,7 +54,7 @@ At this point, the request will just return a large string of HTML with no easy 
 
 Let’s add node-html-parser to give us browser-like methods to query the DOM.
 
-```jsx
+```js
 const axios = require('axios')
 const { parse } = require('node-html-parser')
 

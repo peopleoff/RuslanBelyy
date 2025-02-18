@@ -1,12 +1,8 @@
 <script setup lang="ts">
+import type { ContentCollectionItem } from '@nuxt/content'
+
 defineProps<{
-    blog: {
-        title: string
-        description: string
-        date: string
-        slug: string
-        _path: string
-    }
+    blog: ContentCollectionItem
 }>()
 </script>
 
@@ -16,7 +12,7 @@ defineProps<{
             class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
             <div
                 class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-            <NuxtLink :to="blog._path"
+            <NuxtLink :to="'/blog' + blog.path"
                 ><span
                     class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span
                 ><span class="relative z-10">{{ blog.title }}</span></NuxtLink
@@ -30,7 +26,7 @@ defineProps<{
                 aria-hidden="true"
                 ><span
                     class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span></span
-            >{{ blog.date }}</time
+            >{{ blog.meta.date }}</time
         >
         <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
             {{ blog.description }}
