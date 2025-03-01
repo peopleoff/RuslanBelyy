@@ -1,6 +1,8 @@
 <script setup lang="ts">
-const { data } = useAsyncData('blogList', () => {
-    return queryCollection('content').all()
+const { data } = useAsyncData('blog-list', async () => {
+    return queryCollection('content')
+    .order('meta', 'DESC')
+    .all()
 })
 
 console.log(data.value)
