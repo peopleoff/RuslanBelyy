@@ -10,7 +10,7 @@ const projects = [
         title: 'AstroView',
         description:
             'Astro is an AI-powered astrology website offering daily horoscopes and insightful guidance on life\'s questions, delivering the wisdom of the stars with precision and empathy.',
-        link: 'https://astroview.io/',
+        link: 'https://github.com/peopleoff/AstroView',
     },
     {
         title: 'BillView',
@@ -34,7 +34,7 @@ const projects = [
         title: 'Alertifi',
         description:
             "A game-changing site designed to help you secure those hard-to-find items by automatically checking their availability and notifying you as soon as they're back in stock. Say goodbye to missing out on limited releases",
-        link: 'https://alertifi.io/',
+        link: 'https://github.com/peopleoff/Alertifi',
     },
 ]
 
