@@ -1,8 +1,11 @@
 <script setup lang="ts">
-const { x, y } = useMouse()
+const { x, y } = useMouse({ type: 'client' })
 useHead({
+    htmlAttrs: {
+        class: 'overflow-x-hidden',
+    },
     bodyAttrs: {
-        class: 'flex h-full flex-col bg-zinc-50 dark:bg-black',
+        class: 'flex h-full flex-col bg-zinc-50 dark:bg-black overflow-x-hidden',
     },
 })
 
@@ -16,7 +19,7 @@ const lightStyle = computed(() => {
 </script>
 
 <template>
-    <div class="inset-0 flex justify-center sm:px-8 z-30">
+    <div class="inset-0 flex justify-center sm:px-8 z-30 overflow-x-hidden">
         <div
             id="light"
             class="pointer-events-none"
@@ -37,13 +40,20 @@ const lightStyle = computed(() => {
 
 <style scoped>
 #light {
-    height: 25vmax;
-    aspect-ratio: 1;
-    position: absolute;
-    translate: -50% -50%;
-    border-radius: 50%;
-    background: linear-gradient(to right, aquamarine, mediumpurple);
-    filter: blur(70px);
-    opacity: 0.3;
+    display: none;
+}
+
+@media (pointer: fine) {
+    #light {
+        display: block;
+        height: 25vmax;
+        aspect-ratio: 1;
+        position: fixed;
+        translate: -50% -50%;
+        border-radius: 50%;
+        background: linear-gradient(to right, aquamarine, mediumpurple);
+        filter: blur(70px);
+        opacity: 0.3;
+    }
 }
 </style>

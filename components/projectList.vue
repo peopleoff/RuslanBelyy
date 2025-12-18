@@ -19,10 +19,10 @@ const projects = [
         link: 'https://billview.io',
     },
     {
-        title: 'TCGView',
+        title: 'tcgsearch',
         description:
-            'TCGView is a tool that allows users to view and manage their TCG collections, enabling them to track their collections and share them with others.',
-        link: 'https://tcgview.app/',
+            'A TCG pricing and trading platform that provides real-time market prices, sales history, and verified listings from TCGplayer. Features include shareable trade lists, price calculators, and tools for shop owners and vendors to handle bulk trades efficiently.',
+        link: 'https://tcgsearch.com/',
     },
     {
         title: 'Readit',
